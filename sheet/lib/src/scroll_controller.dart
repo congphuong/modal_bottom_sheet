@@ -127,19 +127,19 @@ class SheetPrimaryScrollPosition extends ScrollPositionWithSingleContext {
     if (sheetPosition.preventingDrag) {
       beginActivity(
         BallisticScrollActivity(
-          this,
-          ScrollSpringSimulation(
-            SpringDescription.withDampingRatio(
-              mass: 0.5,
-              stiffness: 100.0,
-              ratio: 1.1,
+            this,
+            ScrollSpringSimulation(
+              SpringDescription.withDampingRatio(
+                mass: 0.5,
+                stiffness: 100.0,
+                ratio: 1.1,
+              ),
+              pixels,
+              0,
+              velocity,
             ),
-            pixels,
-            0,
-            velocity,
-          ),
-          context.vsync,
-        ),
+            context.vsync,
+            true),
       );
 
       return;
@@ -166,19 +166,19 @@ class SheetPrimaryScrollPosition extends ScrollPositionWithSingleContext {
     } else if (outOfRange) {
       beginActivity(
         BallisticScrollActivity(
-          this,
-          ScrollSpringSimulation(
-            SpringDescription.withDampingRatio(
-              mass: 0.5,
-              stiffness: 100.0,
-              ratio: 1.1,
+            this,
+            ScrollSpringSimulation(
+              SpringDescription.withDampingRatio(
+                mass: 0.5,
+                stiffness: 100.0,
+                ratio: 1.1,
+              ),
+              pixels,
+              0,
+              velocity,
             ),
-            pixels,
-            0,
-            velocity,
-          ),
-          context.vsync,
-        ),
+            context.vsync,
+            true),
       );
       return;
     }
